@@ -1,0 +1,4 @@
+import { NavLink, Outlet } from 'react-router-dom'
+import { ClipboardCheck, MapPinned } from 'lucide-react'
+import Brand from '../components/Brand'
+export default function AgentLayout() { return <div className="mx-auto min-h-screen max-w-md bg-slate-50"><header className="flex h-16 items-center justify-between border-b bg-white px-5"><Brand /><span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700">RK</span></header><main className="px-5 py-6 pb-20"><Outlet /></main><nav className="fixed bottom-0 left-0 right-0 mx-auto flex max-w-md border-t bg-white"><NavLink to="/agent/jobs" className="flex flex-1 flex-col items-center gap-1 py-3 text-xs font-semibold text-brand-700"><ClipboardCheck size={19} />Jobs</NavLink><NavLink to="/agent" className="flex flex-1 flex-col items-center gap-1 py-3 text-xs font-semibold text-slate-500"><MapPinned size={19} />Today</NavLink></nav></div> }

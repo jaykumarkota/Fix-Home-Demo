@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { @apply border-slate-200; }
+  body { @apply min-h-screen bg-slate-50 font-sans text-ink antialiased; }
+  button, input, select { font: inherit; }
+}
+
+@layer components {
+  .nav-link { @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-ink; }
+  .nav-link-active { @apply bg-brand-50 text-brand-700; }
+  .step-dot { @apply flex h-7 w-7 items-center justify-center rounded-full border text-xs font-bold; }
+}

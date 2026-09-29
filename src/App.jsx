@@ -1,0 +1,10 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
+import CustomerLayout from './layouts/CustomerLayout'
+import AdminLayout from './layouts/AdminLayout'
+import AgentLayout from './layouts/AgentLayout'
+import { MobilesPage } from './pages/customer/CustomerFlows'
+import { HomePage, LoginPage, ServiceHistoryPage, ServiceStatusPage } from './pages/customer/CustomerFinalExperience'
+import { BookingConfirmationPage, BookServicePage } from './pages/customer/BookingExperience'
+import { AdminDashboard, AdminHistoryPage, AdminMobilesPage, AgentsPage, RequestDetailsPage, RequestsPage } from './pages/admin/AdminExperience'
+import { AgentDashboard, AgentJobDetailsPage, AgentJobsPage } from './pages/agent/AgentExperience'
+export default function App() { return <Routes><Route element={<CustomerLayout />}><Route path="/" element={<HomePage />} /><Route path="/login" element={<LoginPage />} /><Route path="/mobiles" element={<MobilesPage />} /><Route path="/book-service" element={<BookServicePage />} /><Route path="/booking-confirmation" element={<BookingConfirmationPage />} /><Route path="/service-status" element={<ServiceStatusPage />} /><Route path="/service-history" element={<ServiceHistoryPage />} /></Route><Route path="/admin/login" element={<Navigate to="/admin" replace />} /><Route path="/admin" element={<AdminLayout />}><Route index element={<AdminDashboard />} /><Route path="requests" element={<RequestsPage />} /><Route path="requests/:id" element={<RequestDetailsPage />} /><Route path="agents" element={<AgentsPage />} /><Route path="history" element={<AdminHistoryPage />} /><Route path="mobiles" element={<AdminMobilesPage />} /></Route><Route path="/agent" element={<AgentLayout />}><Route index element={<AgentDashboard />} /><Route path="jobs" element={<AgentJobsPage />} /><Route path="jobs/:id" element={<AgentJobDetailsPage />} /></Route><Route path="*" element={<Navigate to="/" replace />} /></Routes> }
